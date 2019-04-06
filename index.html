@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Train Schedule</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Added a link to our external stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+
+    <!-- Link to Moment.js should go here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>
+            Anytime is train time
+        </h2>
+        <h2>
+            Choo choo. Chee chee
+        </h2>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Train ID</th>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency (minutes)</th>
+                <th scope="col">Next Arrival (HH:mm 24H)</th>
+                <th scope="col">Minutes Away</th>
+            </tr>
+        </thead>
+        <tbody id="train">
+        </tbody>
+    </table>
+    <form>
+        <div class="form-group">
+            <label for="train">Train Name</label>
+            <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination">
+        </div>
+        <div class="form-group">
+            <label for="time">First Train Time (HH:mm military time)</label>
+            <input type="time" class="form-control" id="time">
+        </div>
+        <div class="form-group">
+            <label for="frequency">Frequency (minutes)</label>
+            <input type="number" class="form-control" id="frequency">
+        </div>
+        <button type="submit" class="submitForm">Submit</button>
+    </form>
+    <script src="assets/js/apps.js"></script>
+</body>
+
+</html>
