@@ -20,7 +20,6 @@ var frequency = 0;
 database.ref().on("child_added", function (snapshot) {
     var data = snapshot.val();
     console.log("Entry from DB: " + JSON.stringify(data));
-
     createSchedule(data);
 })
 
@@ -44,6 +43,7 @@ function createSchedule(data) {
     
     var timeCalc = moment(time).add(minutes, 'minutes');
     var timeCalcString = timeCalc.format("HH:mm");
+    var timeCalcTag = $("<th>").text(timeCalcString)
     
     var minutesAway = moment(timeCalc).diff(moment(), 'minutes');
     
@@ -54,7 +54,7 @@ function createSchedule(data) {
     row.append(nametag)
     row.append(destinationtag)
     row.append(frequencytag)
-    row.append(timeCalcString)
+    row.append(timeCalcTag)
     row.append(nextArrivalTag)
 
     $("#train").append(row)
